@@ -23,7 +23,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html {
-      scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
@@ -50,20 +49,20 @@
     /* ─── SUBTITLE ─── */
     .hero-subtitle {
       position: relative;
-      z-index: 10;
+      z-index: 25;
       font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
       font-weight: 700;
       font-size: clamp(1.2rem, 3vw, 2.2rem);
       color: rgb(1, 0, 1);
       line-height: 1.4;
       transform: scaleY(0.65) scaleX(0.9);
-      margin-bottom: -24px;
+      margin-bottom: -clamp(4px, 0.8vh, 8px);
     }
 
     /* ─── LOGO COMPOSITE ─── */
     .hero-logo {
       position: relative;
-      z-index: 10;
+      z-index: 25;
       width: min(65vw, 600px);
       will-change: transform;
       filter: drop-shadow(0 20px 60px rgba(107, 76, 138, 0.12));
@@ -79,7 +78,7 @@
     /* ─── DATE ─── */
     .hero-date {
       position: relative;
-      z-index: 10;
+      z-index: 25;
       display: inline-flex;
       align-items: center;
       gap: 12px;
@@ -94,6 +93,7 @@
       letter-spacing: 2px;
       transform: scale(1.6);
       white-space: nowrap;
+      margin-top: clamp(14px, 2.5vh, 28px);
     }
 
     .date-quote {
@@ -108,24 +108,29 @@
       transform: translateY(4px);
     }
 
-    /* ─── CITY ─── */
-    .hero-city {
-      position: relative;
-      z-index: 10;
-      font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
-      font-weight: 700;
-      font-size: clamp(0.9rem, 1.8vw, 1.3rem);
-      color: var(--purple);
-      text-transform: uppercase;
-      letter-spacing: 8px;
-      margin: -6px 0 -6px 0;
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-quote {
+      width: 64px;
+      height: auto;
       opacity: 0.85;
+      filter: brightness(0) saturate(100%) invert(36%) sepia(30%) saturate(800%) hue-rotate(240deg);
+    }
+    .btn-quote.left {
+      transform: translateY(-3px);
+    }
+    .btn-quote.right {
+      transform: translateY(3px);
     }
 
     /* ─── VENUES ─── */
     .hero-venues {
       position: relative;
-      z-index: 10;
+      z-index: 25;
       width: min(90vw, 820px);
       font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
       font-weight: 700;
@@ -135,7 +140,7 @@
       text-align: justify;
       text-align-last: justify;
       transform: scaleY(0.65) scaleX(0.9);
-      margin: -12px 0;
+      margin: 0 0 -12px;
     }
 
     .hero-venues b {
@@ -151,15 +156,138 @@
     }
 
 
+    /* ─── ARTISTS ─── */
+    .hero-artists {
+      position: relative;
+      z-index: 25;
+      display: flex;
+      flex-direction: column;
+      width: min(90vw, 820px);
+      font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.3rem, 3vw, 2.3rem);
+      color: rgb(1, 0, 1);
+      line-height: 1.4;
+      transform: scaleY(0.7) scaleX(0.92);
+    }
+
+    .hero-artists .artist-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      width: 100%;
+    }
+
+    .hero-artists b {
+      display: inline-block;
+      font-weight: inherit;
+    }
+
+    .hero-artists .ftnote {
+      width: 0.7em;
+      height: 0.7em;
+      vertical-align: super;
+      margin-left: 1px;
+      object-fit: contain;
+    }
+
+    /* ─── NEWS NOTICE ─── */
+    .hero-news {
+      position: relative;
+      z-index: 25;
+      font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.3rem, 3vw, 2.3rem);
+      color: rgb(1, 0, 1);
+      transform: scaleY(0.7) scaleX(0.92);
+    }
+
+    /* ─── SECTION LABELS ─── */
+    .hero-section-label {
+      position: relative;
+      z-index: 25;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.3rem, 3vw, 2.3rem);
+      color: var(--blue);
+      transform: scaleY(0.7) scaleX(0.92);
+      margin-top: clamp(16px, 3vh, 40px);
+      margin-bottom: clamp(-20px, -3vh, -10px);
+    }
+
+    .label-quote {
+      width: 26px;
+      height: auto;
+      filter: brightness(0) saturate(100%) invert(60%) sepia(60%) saturate(900%) hue-rotate(175deg);
+    }
+    .label-quote.left { transform: translateY(-2px); }
+    .label-quote.right { transform: translateY(2px); }
+
+    /* ─── CITIES LEGEND ─── */
+    .hero-cities-legend {
+      position: relative;
+      z-index: 25;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: min(82.8vw, 754px);
+      margin-top: clamp(10px, 2vh, 28px);
+    }
+
+    .hero-cities {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.55rem, 0.85vw, 0.72rem);
+      color: rgb(0, 0, 0);
+    }
+
+    .hero-cities .city-icon {
+      width: 1.1em;
+      height: 1.1em;
+      vertical-align: middle;
+      margin-right: 4px;
+      object-fit: contain;
+    }
+    .hero-cities.placeholders {
+      font-size: clamp(0.65rem, 1vw, 0.85rem);
+    }
+    .hero-cities.placeholders .city-icon {
+      width: 1.3em;
+      height: 1.3em;
+    }
+    .hero-cities .star {
+      font-size: 0.85em;
+      letter-spacing: 1px;
+      vertical-align: middle;
+    }
+    .hero-cities .star {
+      display: inline-block;
+      font-size: 0.7em;
+      letter-spacing: 1px;
+      transform: translateY(0.2em);
+      margin-left: 4px;
+      opacity: 1;
+    }
+
     /* ─── TICKETS BUTTON ─── */
     .hero-cta {
       position: relative;
       z-index: 20;
       display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 18px 56px;
       background: var(--purple);
       border: 2px solid var(--purple);
       cursor: pointer;
+      border-radius: 100px;
       box-shadow: 0 4px 20px rgba(107, 76, 138, 0.25);
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -180,15 +308,32 @@
     }
 
     .ticket-label {
-      font-size: 0.95rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      font-family: inherit;
+      font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
       text-transform: uppercase;
       letter-spacing: 3px;
+      padding-top: 3px;
       color: white;
       white-space: nowrap;
       pointer-events: none;
       transition: color 0.35s ease, letter-spacing 0.35s ease;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cta-group--top {
+      margin-top: clamp(8px, 1.5vh, 20px);
+      margin-bottom: clamp(-12px, -2vh, -4px);
+    }
+
+    .cta-group.hero-cta--bottom {
+      margin-top: clamp(20px, 4vh, 48px);
     }
 
     /* hide the qtickets link visually — it stretches over the whole .hero-cta */
@@ -226,7 +371,7 @@
     /* ─── PARTNER LOGOS (doodle-style) ─── */
     .doodle.partner {
       pointer-events: auto;
-      z-index: 12;
+      z-index: 50;
     }
     .doodle.partner a {
       display: block;
@@ -344,6 +489,7 @@
     .socials a {
       color: var(--purple);
       text-decoration: none;
+      font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif;
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -371,51 +517,117 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="hero">
-    <div class="hero-subtitle">Независимый музыкальный фестиваль</div>
     <div class="hero-logo">
       <img class="letters-img" src="assets/web/hero_letters.png" alt="ВСЕ">
     </div>
 
-    <div class="hero-date">
-      <img class="date-quote left" src="assets/web/quote_left.png" alt="">
-      21–24 мая
-      <img class="date-quote right" src="assets/web/quote_right.png" alt="">
+    <div class="hero-subtitle">Независимый музыкальный фестиваль</div>
+
+    <div class="cta-group cta-group--top">
+      <div class="cta-row">
+        <img class="btn-quote left" src="assets/web/quote_left.png" alt="">
+        <div class="hero-cta">
+          <span class="ticket-label">Купить билеты</span>
+          <a href="https://qtickets.ru/event/225583" class="qtickets-button">Купить билеты</a>
+        </div>
+        <img class="btn-quote right" src="assets/web/quote_right.png" alt="">
+      </div>
+      <div class="socials">
+        <a href="https://t.me/fest_vse" target="_blank">telegram</a>
+        <a href="https://vk.com/fest_vse" target="_blank">vk</a>
+      </div>
     </div>
-    <div class="hero-city">Казань</div>
+
+    <div class="hero-date">
+      21–24 мая
+    </div>
+
+    <div class="hero-section-label"><img class="label-quote left" src="assets/web/quote_left.png" alt="">Первая волна<img class="label-quote right" src="assets/web/quote_right.png" alt=""></div>
+
+    <div class="hero-artists">
+      <div class="artist-row">
+        <span>11:11<img class="ftnote" src="assets/web/icon_nn.png" alt=""></span>
+        <span><b>дом номер семнадцать</b><img class="ftnote" src="assets/web/icon_nn.png" alt=""></span>
+        <span><b>Луговые Мари</b><img class="ftnote" src="assets/web/icon_yo.png" alt=""></span>
+      </div>
+      <div class="artist-row">
+        <span>метеосводка<img class="ftnote" src="assets/web/icon_yo.png" alt=""></span>
+        <span><b>Пайта</b><img class="ftnote" src="assets/web/icon_msk.png" alt=""></span>
+        <span>равноденствие<img class="ftnote" src="assets/web/icon_msk.png" alt=""></span>
+        <span><b>Толмачи</b><img class="ftnote" src="assets/web/icon_kzn.png" alt=""></span>
+      </div>
+    </div>
+
+    <div class="hero-news">Следите за новостями</div>
+
+    <div class="hero-cities-legend">
+      <div class="hero-cities">
+        <span><img class="city-icon" src="assets/web/icon_nn.png" alt="">&nbsp;<b>Нижний Новгород</b></span>
+        <span><img class="city-icon" src="assets/web/icon_yo.png" alt="">&nbsp;<b>Йошкар-Ола</b></span>
+        <span><img class="city-icon" src="assets/web/icon_msk.png" alt="">&nbsp;<b>Москва</b></span>
+        <span><img class="city-icon" src="assets/web/icon_kzn.png" alt="">&nbsp;<b>Казань</b></span>
+      </div>
+      <div class="hero-cities placeholders">
+        <span><img class="city-icon" src="assets/web/icon_cloud.png" alt=""> <span class="star">******</span></span>
+        <span><img class="city-icon" src="assets/web/icon_spiral.png" alt=""> <span class="star">********</span></span>
+        <span><img class="city-icon" src="assets/web/icon_speech.png" alt=""> <span class="star">***</span></span>
+        <span><img class="city-icon" src="assets/web/icon_bam.png" alt=""> <span class="star">****************</span></span>
+        <span><img class="city-icon" src="assets/web/icon_note.png" alt=""> <span class="star">*****************</span></span>
+      </div>
+    </div>
+
+    <div class="hero-section-label"><img class="label-quote left" src="assets/web/quote_left.png" alt="">Площадки<img class="label-quote right" src="assets/web/quote_right.png" alt=""></div>
 
     <div class="hero-venues">Смена <b>Бар «Фомин»</b> <span class="star">****</span> <b>Бар «Ща»</b><br><span class="star">**** *******</span> <b>Московский рынок</b> <span class="star">********** ****</span></div>
 
-    <div class="hero-cta">
-      <span class="ticket-label">Купить билеты</span>
-      <a href="https://qtickets.ru/event/225583" class="qtickets-button">Купить билеты</a>
+    <div class="cta-group hero-cta--bottom">
+      <div class="cta-row">
+        <img class="btn-quote left" src="assets/web/quote_left.png" alt="">
+        <div class="hero-cta">
+          <span class="ticket-label">Купить билеты</span>
+          <a href="https://qtickets.ru/event/225583" class="qtickets-button">Купить билеты</a>
+        </div>
+        <img class="btn-quote right" src="assets/web/quote_right.png" alt="">
+      </div>
+      <div class="socials">
+        <a href="https://t.me/fest_vse" target="_blank">telegram</a>
+        <a href="https://vk.com/fest_vse" target="_blank">vk</a>
+      </div>
     </div>
 
-    <!-- TOP ROW -->
-    <div class="doodle depth-2" data-speed="0.3" style="top: 1%; left: 1%; width: 100px;">
-      <img src="assets/web/doodle_17.png" alt="">
-    </div>
-    <div class="doodle partner" data-speed="0.45" style="top: 1%; left: 12%; width: 180px;">
+    <!-- TOP ROW — только партнёры -->
+    <div class="doodle partner" data-speed="0.45" style="top: 4%; left: 12%; width: 180px;">
       <a href="https://t.me/smena_kazan" target="_blank" style="transform: rotate(-3deg);"><img src="assets/web/smena.png" alt="Смена"></a>
     </div>
-    <div class="doodle depth-1" data-speed="0.55" style="top: 1%; left: 35%; width: 75px;">
-      <img src="assets/web/doodle_06.png" alt="">
-    </div>
-    <div class="doodle depth-2" data-speed="0.48" style="top: 1%; left: 46%; width: 65px;">
-      <img src="assets/web/doodle_g02.png" alt="">
-    </div>
-    <div class="doodle depth-3 stretched" data-speed="0.15" style="top: 1%; right: 26%; width: 120px;">
-      <img src="assets/web/doodle_08.png" alt="">
-    </div>
-    <div class="doodle depth-1" data-speed="0.42" style="top: 1%; right: 38%; width: 60px;">
-      <img src="assets/web/doodle_g09.png" alt="">
-    </div>
-    <div class="doodle partner" data-speed="0.5" style="top: 1%; right: 1%; width: 120px;">
+    <div class="doodle partner" data-speed="0.5" style="top: 4%; right: 1%; width: 120px;">
       <a href="https://yandex.com/maps/-/CPVr4M0x" target="_blank" style="transform: rotate(3deg);"><img src="assets/web/fomin.png" alt="Бар Фомин"></a>
     </div>
 
+    <!-- НАД «ВСЕ» -->
+    <div class="doodle depth-2" data-speed="0.3" style="top: 1%; left: 2%; width: 90px;">
+      <img src="assets/web/doodle_17.png" alt="">
+    </div>
+    <div class="doodle depth-3 stretched" data-speed="0.15" style="top: 1%; right: 14%; width: 80px;">
+      <img src="assets/web/doodle_08.png" alt="">
+    </div>
+    <div class="doodle depth-2" data-speed="0.48" style="top: 2%; left: calc(50% - 30px); width: 60px;">
+      <img src="assets/web/doodle_g02.png" alt="">
+    </div>
+    <div class="doodle depth-1" data-speed="0.5" style="top: 3%; right: 2%; width: 70px;">
+      <img src="assets/web/doodle_05.png" alt="">
+    </div>
+
+    <!-- ПО БОКАМ «ВСЕ» — разреженно -->
+    <div class="doodle depth-1" data-speed="0.55" style="top: 9%; left: 13%; width: 70px;">
+      <img src="assets/web/doodle_06.png" alt="">
+    </div>
+    <div class="doodle depth-2" data-speed="0.45" style="top: 11%; right: 2%; width: 75px;">
+      <img src="assets/web/doodle_04.png" alt="">
+    </div>
+
     <!-- LEFT COLUMN — alternating edge(1-5%) / inner(12-18%), 8% vertical gap -->
-    <div class="doodle depth-1" data-speed="0.42" style="top: 16%; left: 2%; width: 140px;">
-      <img src="assets/web/doodle_07.png" alt="">
+    <div class="doodle depth-1" data-speed="0.42" style="top: 16%; left: 2%; width: 60px;">
+      <img src="assets/web/doodle_12.png" alt="">
     </div>
     <div class="doodle depth-2" data-speed="0.36" style="top: 24%; left: 14%; width: 80px;">
       <img src="assets/web/doodle_g06.png" alt="">
@@ -423,17 +635,15 @@
     <div class="doodle partner" data-speed="0.35" style="top: 32%; left: 2%; width: 130px;">
       <a href="https://t.me/scha_kazan" target="_blank" style="transform: rotate(4deg);"><img src="assets/web/sha.png" alt="Бар Ща"></a>
     </div>
-    <div class="doodle depth-1" data-speed="0.48" style="top: 40%; left: 15%; width: 85px;">
-      <img src="assets/web/doodle_12.png" alt="">
+    <div class="doodle depth-1" data-speed="0.48" style="top: 40%; left: 15%; width: 190px;">
+      <img src="assets/web/doodle_07.png" alt="">
     </div>
     <div class="doodle depth-3 stretched" data-speed="0.2" style="top: 48%; left: 2%; width: 80px;">
       <img src="assets/web/doodle_19.png" alt="">
     </div>
-    <div class="doodle depth-2" data-speed="0.44" style="top: 56%; left: 14%; width: 75px;">
-      <img src="assets/web/doodle_11.png" alt="">
-    </div>
+
     <div class="doodle depth-1" data-speed="0.36" style="top: 64%; left: 2%; width: 75px;">
-      <img src="assets/web/doodle_g04.png" alt="">
+      <img src="assets/web/doodle_g03.png" alt="">
     </div>
     <div class="doodle depth-3 stretched" data-speed="0.22" style="top: 72%; left: 13%; width: 80px;">
       <img src="assets/web/doodle_g07.png" alt="">
@@ -447,7 +657,7 @@
       <img src="assets/web/doodle_18.png" alt="">
     </div>
     <div class="doodle depth-2" data-speed="0.34" style="top: 24%; right: 14%; width: 80px;">
-      <img src="assets/web/doodle_g03.png" alt="">
+      <img src="assets/web/doodle_g04.png" alt="">
     </div>
     <div class="doodle depth-3 stretched" data-speed="0.18" style="top: 32%; right: 2%; width: 85px;">
       <img src="assets/web/doodle_15.png" alt="">
@@ -471,18 +681,9 @@
       <img src="assets/web/doodle_g14.png" alt="">
     </div>
 
-    <!-- BOTTOM — corners only, center clean for CTA -->
+    <!-- BOTTOM — только угловые якоря -->
     <div class="doodle depth-2" data-speed="0.35" style="bottom: 2%; left: 1%; width: 90px;">
       <img src="assets/web/doodle_10.png" alt="">
-    </div>
-    <div class="doodle depth-1" data-speed="0.5" style="bottom: 3%; left: 9%; width: 80px;">
-      <img src="assets/web/doodle_05.png" alt="">
-    </div>
-    <div class="doodle depth-3 stretched" data-speed="0.15" style="bottom: 2%; left: 18%; width: 60px;">
-      <img src="assets/web/doodle_16.png" alt="">
-    </div>
-    <div class="doodle depth-2" data-speed="0.45" style="bottom: 2%; right: 8%; width: 80px;">
-      <img src="assets/web/doodle_04.png" alt="">
     </div>
     <div class="doodle depth-1" data-speed="0.35" style="bottom: 2%; right: 1%; width: 70px;">
       <img src="assets/web/doodle_09.png" alt="">
@@ -495,10 +696,6 @@
       <a href="https://t.me/moscowmarketkzn" target="_blank" style="width: 90px;"><img src="assets/web/moscow.png" alt="Московский рынок"></a>
     </div>
 
-    <div class="socials">
-      <a href="https://t.me/fest_vse" target="_blank">telegram</a>
-      <a href="https://vk.com/fest_vse" target="_blank">vk</a>
-    </div>
   </section>
 
 
@@ -507,8 +704,6 @@
   <script>
     const hero = document.querySelector('.hero');
     const doodles = document.querySelectorAll('.doodle');
-    const heroLogo = document.querySelector('.hero-logo');
-    const lettersImg = document.querySelector('.letters-img');
     let ticking = false;
 
     function updateParallax() {
@@ -524,9 +719,7 @@
           d.style.transform = `translateY(${y}px) rotate(${rotate}deg)`;
         });
 
-        // Logo container — moves slowly + subtle scale for inner life
-        const s = 1 + scrollY * 0.00008;
-        heroLogo.style.transform = `translateY(${scrollY * 0.08}px) scale(${s})`;
+
       }
 
       ticking = false;
@@ -549,9 +742,9 @@
     // Floating idle animation
     const floatStyles = document.createElement('style');
     floatStyles.textContent = `
-      @keyframes f0 { 0%,100%{margin-top:0} 50%{margin-top:-10px} }
-      @keyframes f1 { 0%,100%{margin-top:0} 50%{margin-top:8px} }
-      @keyframes f2 { 0%,100%{margin-left:0} 50%{margin-left:7px} }
+      @keyframes f0 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+      @keyframes f1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+      @keyframes f2 { 0%,100%{transform:translateX(0)} 50%{transform:translateX(7px)} }
     `;
     document.head.appendChild(floatStyles);
 
