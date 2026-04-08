@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <title>Фестиваль «Все» — первая волна лайнапа</title>
   <!--[if mso]>
   <noscript>
@@ -14,20 +16,58 @@
     </xml>
   </noscript>
   <![endif]-->
+  <style>
+    :root { color-scheme: light dark; }
+
+    @media (prefers-color-scheme: dark) {
+      /* outer wrapper */
+      .email-bg   { background-color: #0D0818 !important; }
+
+      /* header — keep light so logo reads well */
+      .email-header { background-color: #F0EAF8 !important; border-bottom-color: #6B4C8A !important; }
+      .header-date  { color: #6B4C8A !important; }
+
+      /* white body sections → dark */
+      .email-body   { background-color: #18102C !important; }
+
+      /* text */
+      .email-text   { color: #D8D0EC !important; }
+      .email-strong { color: #E8E0F8 !important; }
+      .email-link   { color: #A48FD0 !important; border-bottom-color: #7BAFD4 !important; }
+
+      /* lineup */
+      .lineup-border { border-top-color: #4A7A9B !important; }
+      .lineup-label  { color: #4A9ABC !important; }
+      .artist-name   { color: #E0D8F0 !important; }
+      .artist-city   { color: #A48FD0 !important; }
+      .artist-sep    { border-bottom-color: #261A40 !important; }
+
+      /* sign-off */
+      .signoff-cell  { border-bottom-color: #261A40 !important; }
+      .signoff-name  { color: #6B4C8A !important; }
+
+      /* footer */
+      .email-footer  { background-color: #100B20 !important; border-radius: 0 0 12px 12px; }
+      .footer-label  { color: #5A4878 !important; }
+      .footer-social { color: #8B6CAA !important; }
+      .footer-social-link { color: #9E7FBC !important; }
+      .footer-note   { color: #4A3860 !important; }
+    }
+  </style>
 </head>
 <body style="margin:0; padding:0; background-color:#EDE8F4; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
 
 <!-- OUTER WRAPPER -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#EDE8F4;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" class="email-bg" style="background-color:#EDE8F4;">
   <tr>
     <td align="center" style="padding:32px 16px 48px;">
 
       <!-- EMAIL CARD -->
       <table width="600" cellpadding="0" cellspacing="0" border="0" role="presentation" style="max-width:600px; width:100%;">
 
-        <!-- ═══════════════ HEADER (white + logo) ═══════════════ -->
+        <!-- ═══════════════ HEADER ═══════════════ -->
         <tr>
-          <td align="center" style="background-color:#FFFFFF; border-radius:12px 12px 0 0; padding:36px 32px 24px; text-align:center; border-bottom:3px solid #6B4C8A;">
+          <td align="center" class="email-header" style="background-color:#FFFFFF; border-radius:12px 12px 0 0; padding:36px 32px 24px; text-align:center; border-bottom:3px solid #6B4C8A;">
             <img src="https://fest-vse.ru/assets/web/email_logo.png"
                  alt="ВСЕ"
                  width="360"
@@ -35,15 +75,15 @@
             <p style="margin:14px 0 6px; font-family:Arial,Helvetica,sans-serif; font-size:10px; font-weight:bold; letter-spacing:5px; text-transform:uppercase; color:#7BAFD4;">
               Независимый музыкальный фестиваль
             </p>
-            <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; color:#6B4C8A;">
+            <p class="header-date" style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:26px; font-weight:900; letter-spacing:2px; color:#6B4C8A;">
               21–24 мая · Казань
             </p>
           </td>
         </tr>
 
-        <!-- ═══════════════ DOODLES ROW (after header) ═══════════════ -->
+        <!-- ═══════════════ DOODLES ROW ═══════════════ -->
         <tr>
-          <td style="background-color:#FFFFFF; padding:0;">
+          <td class="email-body" style="background-color:#FFFFFF; padding:0;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
               <tr>
                 <td width="90" style="padding:12px 0 0 20px; vertical-align:bottom;">
@@ -62,93 +102,85 @@
 
         <!-- ═══════════════ INTRO ═══════════════ -->
         <tr>
-          <td style="background-color:#FFFFFF; padding:20px 48px 8px;">
-            <p style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Привет!</p>
-            <p style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Это Сергей. Пишу тебе как постояннику концертов&nbsp;«Нормальный&nbsp;инди» в&nbsp;Казани.</p>
-            <p style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">21–24 мая мы делаем фестиваль&nbsp;<strong>«Все»</strong> — четыре дня, шесть сцен, больше тридцати артистов на разных площадках.</p>
-            <p style="margin:0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Это наш самый амбициозный проект, и мы только что объявили <strong>первую волну лайнапа:</strong></p>
+          <td class="email-body" style="background-color:#FFFFFF; padding:20px 48px 8px;">
+            <p class="email-text" style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Привет!</p>
+            <p class="email-text" style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Это Сергей. Пишу тебе как постояннику концертов&nbsp;«Нормальный&nbsp;инди» в&nbsp;Казани.</p>
+            <p class="email-text" style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">21–24 мая мы делаем фестиваль&nbsp;<strong class="email-strong">«Все»</strong> — четыре дня, шесть сцен, больше тридцати артистов на разных площадках.</p>
+            <p class="email-text" style="margin:0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Это наш самый амбициозный проект, и мы только что объявили <strong class="email-strong">первую волну лайнапа:</strong></p>
           </td>
         </tr>
 
         <!-- ═══════════════ LINEUP ═══════════════ -->
         <tr>
-          <td style="background-color:#FFFFFF; padding:28px 48px 4px;">
+          <td class="email-body" style="background-color:#FFFFFF; padding:28px 48px 4px;">
 
-            <!-- Label -->
             <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
               <tr>
-                <td style="border-top:2px solid #7BAFD4; padding-top:12px; padding-bottom:4px;">
-                  <span style="font-family:Arial,Helvetica,sans-serif; font-size:9px; font-weight:bold; letter-spacing:4px; text-transform:uppercase; color:#7BAFD4;">Первая волна</span>
+                <td class="lineup-border" style="border-top:2px solid #7BAFD4; padding-top:12px; padding-bottom:4px;">
+                  <span class="lineup-label" style="font-family:Arial,Helvetica,sans-serif; font-size:9px; font-weight:bold; letter-spacing:4px; text-transform:uppercase; color:#7BAFD4;">Первая волна</span>
                 </td>
               </tr>
             </table>
 
-            <!-- 11:11 -->
-            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-bottom:1px solid #EDE8F4;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" class="artist-sep" style="border-bottom:1px solid #EDE8F4;">
               <tr>
-                <td style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">11:11</td>
+                <td class="artist-name" style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">11:11</td>
                 <td align="right" style="padding:11px 0 10px; white-space:nowrap;">
-                  <span style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Нижний Новгород</span>
+                  <span class="artist-city" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Нижний Новгород</span>
                 </td>
               </tr>
             </table>
 
-            <!-- дом номер семнадцать -->
-            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-bottom:1px solid #EDE8F4;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" class="artist-sep" style="border-bottom:1px solid #EDE8F4;">
               <tr>
-                <td style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">дом номер семнадцать</td>
+                <td class="artist-name" style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">дом номер семнадцать</td>
                 <td align="right" style="padding:11px 0 10px; white-space:nowrap; padding-left:12px;">
-                  <span style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Йошкар-Ола</span>
+                  <span class="artist-city" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Йошкар-Ола</span>
                 </td>
               </tr>
             </table>
 
-            <!-- Луговые Мари -->
-            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-bottom:1px solid #EDE8F4;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" class="artist-sep" style="border-bottom:1px solid #EDE8F4;">
               <tr>
-                <td style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">Луговые Мари</td>
+                <td class="artist-name" style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">Луговые Мари</td>
                 <td align="right" style="padding:11px 0 10px; white-space:nowrap; padding-left:12px;">
-                  <span style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Москва</span>
+                  <span class="artist-city" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Москва</span>
                 </td>
               </tr>
             </table>
 
-            <!-- метеосводка -->
-            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-bottom:1px solid #EDE8F4;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" class="artist-sep" style="border-bottom:1px solid #EDE8F4;">
               <tr>
-                <td style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">метеосводка</td>
+                <td class="artist-name" style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">метеосводка</td>
                 <td align="right" style="padding:11px 0 10px; white-space:nowrap; padding-left:12px;">
-                  <span style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Казань</span>
+                  <span class="artist-city" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Казань</span>
                 </td>
               </tr>
             </table>
 
-            <!-- Пайта -->
-            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-bottom:1px solid #EDE8F4;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" class="artist-sep" style="border-bottom:1px solid #EDE8F4;">
               <tr>
-                <td style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">Пайта</td>
+                <td class="artist-name" style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">Пайта</td>
                 <td align="right" style="padding:11px 0 10px; white-space:nowrap; padding-left:12px;">
-                  <span style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Москва</span>
+                  <span class="artist-city" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Москва</span>
                 </td>
               </tr>
             </table>
 
-            <!-- равноденствие -->
-            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-bottom:1px solid #EDE8F4;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" class="artist-sep" style="border-bottom:1px solid #EDE8F4;">
               <tr>
-                <td style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">равноденствие</td>
+                <td class="artist-name" style="padding:11px 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">равноденствие</td>
                 <td align="right" style="padding:11px 0 10px; white-space:nowrap; padding-left:12px;">
-                  <span style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Москва</span>
+                  <span class="artist-city" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Москва</span>
                 </td>
               </tr>
             </table>
 
-            <!-- Толмачи -->
             <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
               <tr>
-                <td style="padding:11px 0 4px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">Толмачи</td>
+                <td class="artist-name" style="padding:11px 0 4px; font-family:Arial,Helvetica,sans-serif; font-size:19px; font-weight:bold; color:#111111;">Толмачи</td>
                 <td align="right" style="padding:11px 0 4px; white-space:nowrap; padding-left:12px;">
-                  <span style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Казань</span>
+                  <span class="artist-city" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#6B4C8A;">Казань</span>
                 </td>
               </tr>
             </table>
@@ -156,9 +188,9 @@
           </td>
         </tr>
 
-        <!-- ═══════════════ DOODLE DIVIDER (between lineup & text) ═══════════════ -->
+        <!-- ═══════════════ DOODLE DIVIDER ═══════════════ -->
         <tr>
-          <td style="background-color:#FFFFFF; padding:16px 0 8px; text-align:center;">
+          <td class="email-body" style="background-color:#FFFFFF; padding:16px 0 8px; text-align:center;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
               <tr>
                 <td style="text-align:right; padding-right:24px; vertical-align:middle;">
@@ -174,16 +206,16 @@
 
         <!-- ═══════════════ BODY TEXT ═══════════════ -->
         <tr>
-          <td style="background-color:#FFFFFF; padding:8px 48px 0;">
-            <p style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Каждый из этих исполнителей — небольшое открытие. Многие сыграют в Казани впервые. Это ещё не весь лайнап, остальные имена будем объявлять ближе к фестивалю.</p>
-            <p style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Билеты — на&nbsp;<a href="https://vsefest.ru" target="_blank" style="color:#6B4C8A; font-weight:bold; text-decoration:none; border-bottom:2px solid #7BAFD4;">vsefest.ru</a>. Цена сейчас стартовая и дальше будет расти по мере приближения к маю. Если в принципе думаешь о том, чтобы прийти — лучше брать билет сейчас.</p>
-            <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Мы делаем «Все» сами, без больших спонсоров. Каждый билет, купленный заранее, реально помогает нам закрыть гонорары артистов, арендовать оборудование, оплатить площадки — и каждый человек, который придёт, для нас важен лично.</p>
+          <td class="email-body" style="background-color:#FFFFFF; padding:8px 48px 0;">
+            <p class="email-text" style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Каждый из этих исполнителей — небольшое открытие. Многие сыграют в Казани впервые. Это ещё не весь лайнап, остальные имена будем объявлять ближе к фестивалю.</p>
+            <p class="email-text" style="margin:0 0 18px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Билеты — на&nbsp;<a href="https://vsefest.ru" target="_blank" class="email-link" style="color:#6B4C8A; font-weight:bold; text-decoration:none; border-bottom:2px solid #7BAFD4;">vsefest.ru</a>. Цена сейчас стартовая и дальше будет расти по мере приближения к маю. Если в принципе думаешь о том, чтобы прийти — лучше брать билет сейчас.</p>
+            <p class="email-text" style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.7;">Мы делаем «Все» сами, без больших спонсоров. Каждый билет, купленный заранее, реально помогает нам закрыть гонорары артистов, арендовать оборудование, оплатить площадки — и каждый человек, который придёт, для нас важен лично.</p>
           </td>
         </tr>
 
-        <!-- ═══════════════ CTA BUTTON (with flanking doodles) ═══════════════ -->
+        <!-- ═══════════════ CTA BUTTON ═══════════════ -->
         <tr>
-          <td align="center" style="background-color:#FFFFFF; padding:28px 24px 28px;">
+          <td class="email-body" align="center" style="background-color:#FFFFFF; padding:28px 24px 28px;">
             <table cellpadding="0" cellspacing="0" border="0" role="presentation">
               <tr>
                 <td style="padding-right:14px; vertical-align:middle;">
@@ -205,14 +237,14 @@
 
         <!-- ═══════════════ SIGN-OFF ═══════════════ -->
         <tr>
-          <td style="background-color:#FFFFFF; padding:0 48px 40px; border-bottom:1px solid #E8E0F0;">
+          <td class="email-body signoff-cell" style="background-color:#FFFFFF; padding:0 48px 40px; border-bottom:1px solid #E8E0F0;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
               <tr>
                 <td style="vertical-align:bottom;">
-                  <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.9;">
+                  <p class="email-text" style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.9;">
                     До встречи,<br>
                     Сергей<br>
-                    <span style="color:#6B4C8A; font-weight:bold;">Фестиваль&nbsp;«Все»</span>
+                    <span class="signoff-name" style="color:#6B4C8A; font-weight:bold;">Фестиваль&nbsp;«Все»</span>
                   </p>
                 </td>
                 <td width="90" align="right" style="vertical-align:bottom; padding-bottom:4px;">
@@ -225,9 +257,9 @@
 
         <!-- ═══════════════ FOOTER ═══════════════ -->
         <tr>
-          <td style="background-color:#F5F0FA; border-radius:0 0 12px 12px; padding:28px 48px 36px; text-align:center;">
+          <td class="email-footer" style="background-color:#F5F0FA; border-radius:0 0 12px 12px; padding:28px 48px 36px; text-align:center;">
 
-            <p style="margin:0 0 20px; font-family:Arial,Helvetica,sans-serif; font-size:9px; font-weight:bold; letter-spacing:4px; text-transform:uppercase; color:#9E8DB5;">Партнёры фестиваля</p>
+            <p class="footer-label" style="margin:0 0 20px; font-family:Arial,Helvetica,sans-serif; font-size:9px; font-weight:bold; letter-spacing:4px; text-transform:uppercase; color:#9E8DB5;">Партнёры фестиваля</p>
 
             <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
               <tr>
@@ -254,13 +286,13 @@
               </tr>
             </table>
 
-            <p style="margin:24px 0 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#9E8DB5; letter-spacing:1px;">
-              <a href="https://t.me/fest_vse" target="_blank" style="color:#6B4C8A; text-decoration:none; font-weight:700;">Telegram</a>
+            <p class="footer-social" style="margin:24px 0 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#9E8DB5; letter-spacing:1px;">
+              <a href="https://t.me/fest_vse" target="_blank" class="footer-social-link" style="color:#6B4C8A; text-decoration:none; font-weight:700;">Telegram</a>
               &nbsp;&nbsp;·&nbsp;&nbsp;
-              <a href="https://vk.com/fest_vse" target="_blank" style="color:#6B4C8A; text-decoration:none; font-weight:700;">VK</a>
+              <a href="https://vk.com/fest_vse" target="_blank" class="footer-social-link" style="color:#6B4C8A; text-decoration:none; font-weight:700;">VK</a>
             </p>
 
-            <p style="margin:18px 0 0; font-family:Arial,Helvetica,sans-serif; font-size:11px; color:#C0B0D8; line-height:1.6;">
+            <p class="footer-note" style="margin:18px 0 0; font-family:Arial,Helvetica,sans-serif; font-size:11px; color:#C0B0D8; line-height:1.6;">
               Ты получил это письмо, потому что бывал на концертах «Нормальный&nbsp;инди».
             </p>
 
@@ -268,7 +300,6 @@
         </tr>
 
       </table>
-      <!-- / EMAIL CARD -->
 
     </td>
   </tr>
