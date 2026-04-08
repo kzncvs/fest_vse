@@ -449,11 +449,20 @@
       }
       .doodle { transform: scale(0.55) !important; }
       .hero-venues {
-        font-size: 0.85rem;
+        font-size: clamp(0.7rem, 3.7vw, 0.85rem);
         transform: scaleY(0.7) scaleX(0.95);
       }
       .hero-artists {
-        font-size: 0.88rem;
+        font-size: clamp(0.72rem, 3.8vw, 0.88rem);
+      }
+      .hero-subtitle {
+        font-size: clamp(1rem, 5vw, 1.2rem);
+      }
+      .hero-cities {
+        font-size: clamp(0.48rem, 2vw, 0.72rem);
+      }
+      .hero-cities.placeholders {
+        font-size: clamp(0.4rem, 2.1vw, 0.85rem);
       }
       .cta-group--top {
         margin-top: 6px;
